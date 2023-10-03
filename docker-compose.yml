@@ -1,0 +1,10 @@
+version: '3'
+services:
+  multipdf-chat-app:
+    build:
+      context: .
+    ports:
+      - "8501:8501"
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+    command: sh -c "pip install -r requirements.txt && streamlit run app.py"
